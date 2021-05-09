@@ -4,30 +4,24 @@
     <style>
       #lbl {
         display: flex;
-        font-family: sans-serif;
-        font-size: 18pt;
-        color: #ff5757;
-        padding: 5px;
-        border: 1px solid #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 19pt;
+        color: #ebebeb;
+        padding-top: 5px;
         justify-content: left;
         line-height: 1.5;
-        height: 85%;
         font-weight: bold;
         flex-direction: row;
       }
 
-      #container {
-        display: flex;
-        align-items: flex-start;
+      #date {
+          font-size: 13pt;
+          font-weight: normal;
       }
 
-      #date{
-          font-size:12pt;
-          font-weight: bold;
-      }
-
-      body{
-          background-color: #3f4447;
+      body {
+          background-color: #2f3437;
+          margin: 0;
       }
     </style>
 </head>
@@ -37,16 +31,16 @@
 
 <script>
     var weekday = new Array(7);
-    weekday[0] = "воскресенье";
-    weekday[1] = "понедельник";
-    weekday[2] = "вторник";
-    weekday[3] = "среда";
-    weekday[4] = "четверг";
-    weekday[5] = "пятница";
-    weekday[6] = "суббота";
+    weekday[0] = "Понедельник";
+    weekday[1] = "Вторник";
+    weekday[2] = "Среда";
+    weekday[3] = "Четверг";
+    weekday[4] = "Пятница";
+    weekday[5] = "Суббота";
+    weekday[6] = "Воскресенье";
 
-    const monthNames = ["январь", "февраль", "март", "апрель", "май", "июнь",
-      "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"
+    const monthNames = ["января", "февраля", "марта", "апреля", "мая", "июня",
+      "июля", "августа", "сентября", "октября", "ноября", "декабря"
     ];
 
     
@@ -58,16 +52,16 @@
     var greet;
 
     if (hrs < 12)
-        greet = 'доброе утро, Александр.  ';
+        greet = 'Доброе утро, Александр ☀️';
     else if (hrs >= 12 && hrs <= 17)
-        greet = 'добрый день, Александр. ';
+        greet = 'Добрый день, Александр ✨';
     else if (hrs >= 17 && hrs <= 24)
-        greet = 'добрый вечер, Александр.  ';
+        greet = 'Добрый вечер, Александр 🌙';
 
     document.getElementById('lbl').innerHTML = `
         <div class="container">
-          <div id="date"> ${date}</div>
           <div class="greeting">${greet}</div>
+          <div id="date"> ${date}</div>
         <div/>
     `;
 </script> 
