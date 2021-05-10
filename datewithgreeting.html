@@ -5,7 +5,7 @@
       #lbl {
         display: flex;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-        font-size: 6.3vw; /*19pt;*/
+        font-size: 19pt;
         color: #ebebeb;
         padding-top: 5px;
         justify-content: left;
@@ -13,15 +13,19 @@
         font-weight: bold;
         flex-direction: row;
       }
-
       #date {
-          font-size: 4.3vw; /*13pt;*/
+          font-size: 0.7em;
           font-weight: normal;
       }
-
       body {
           background-color: #2f3437;
           margin: 0;
+      }
+        
+      @media screen and (max-width: 600px) {
+          #lbl {
+              font-size: 6.3vw;
+          }
       }
     </style>
 </head>
@@ -52,16 +56,16 @@
     var greet;
 
     if (hrs < 12)
-        greet = 'Доброе утро, Александр ☀️';
+        greet = 'Доброе утро, Александр&nbsp;☀️';
     else if (hrs >= 12 && hrs <= 17)
-        greet = 'Добрый день, Александр ✨';
+        greet = 'Добрый день, Александр&nbsp;✨';
     else if (hrs >= 17 && hrs <= 24)
-        greet = 'Добрый вечер, Александр 🌙';
+        greet = 'Добрый вечер, Александр&nbsp;🌙';
 
     document.getElementById('lbl').innerHTML = `
         <div class="container">
           <div class="greeting">${greet}</div>
-          <div id="date"> ${date}</div>
+          <div id="date">${date}</div>
         <div/>
     `;
 </script> 
